@@ -20,16 +20,15 @@ struct NewsFeedParser {
             throw ParseError.noStatusField
         }
 
+        if status != "ok" {
+            throw ParseError.generic(message: status)
+        }
+
         guard let articles = response["articles"] as? [Dictionary<String, Any>] else {
             throw ParseError.noArticlesField
         }
-        
-        if status == "ok" {
-            return process(response: articles)
-        }
-        else {
-            throw ParseError.generic(message: status)
-        }
+
+        return process(response: articles)
     }
 
     // Populate self.articles from result
