@@ -44,7 +44,7 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Headline" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MC2-mP-lzh">
-                                                    <rect key="frame" x="14" y="-9" width="347" height="61.5"/>
+                                                    <rect key="frame" x="15" y="11" width="345" height="21.5"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
@@ -52,11 +52,14 @@
                                             </subviews>
                                             <constraints>
                                                 <constraint firstItem="MC2-mP-lzh" firstAttribute="centerX" secondItem="Bre-FF-Ohz" secondAttribute="centerX" id="ER2-Bl-Caj"/>
-                                                <constraint firstItem="MC2-mP-lzh" firstAttribute="leading" secondItem="Bre-FF-Ohz" secondAttribute="leadingMargin" constant="-1" id="NY4-Cz-xQu"/>
-                                                <constraint firstItem="MC2-mP-lzh" firstAttribute="top" secondItem="Bre-FF-Ohz" secondAttribute="topMargin" constant="-20" id="e26-7t-whE"/>
+                                                <constraint firstItem="MC2-mP-lzh" firstAttribute="leading" secondItem="Bre-FF-Ohz" secondAttribute="leadingMargin" id="NY4-Cz-xQu"/>
+                                                <constraint firstItem="MC2-mP-lzh" firstAttribute="top" secondItem="Bre-FF-Ohz" secondAttribute="topMargin" id="e26-7t-whE"/>
                                                 <constraint firstItem="MC2-mP-lzh" firstAttribute="centerY" secondItem="Bre-FF-Ohz" secondAttribute="centerY" id="zAK-JU-yYS"/>
                                             </constraints>
                                         </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="headlineLabel" destination="MC2-mP-lzh" id="vTh-bP-zxn"/>
+                                        </connections>
                                     </tableViewCell>
                                 </prototypes>
                                 <connections>
