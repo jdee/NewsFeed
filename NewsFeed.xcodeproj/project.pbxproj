@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		7B8F49AD21C4441E00F52A70 /* NewsFeedParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B8F49AC21C4441E00F52A70 /* NewsFeedParser.swift */; };
 		7B9313EF21C40D7E00DB48A2 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B9313EE21C40D7E00DB48A2 /* AppDelegate.swift */; };
 		7B9313F121C40D7E00DB48A2 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B9313F021C40D7E00DB48A2 /* ViewController.swift */; };
 		7B9313F421C40D7E00DB48A2 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7B9313F221C40D7E00DB48A2 /* Main.storyboard */; };
@@ -29,6 +30,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		7B8F49AC21C4441E00F52A70 /* NewsFeedParser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsFeedParser.swift; sourceTree = "<group>"; };
 		7B9313EB21C40D7E00DB48A2 /* NewsFeed.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NewsFeed.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7B9313EE21C40D7E00DB48A2 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		7B9313F021C40D7E00DB48A2 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -92,6 +94,7 @@
 				7B9313F721C40D7F00DB48A2 /* LaunchScreen.storyboard */,
 				7B9313FA21C40D7F00DB48A2 /* Info.plist */,
 				7B93141021C4168E00DB48A2 /* NewsFeed.swift */,
+				7B8F49AC21C4441E00F52A70 /* NewsFeedParser.swift */,
 			);
 			path = NewsFeed;
 			sourceTree = "<group>";
@@ -209,6 +212,7 @@
 				7B93140F21C4131A00DB48A2 /* HeadlineTableViewCell.swift in Sources */,
 				7B9313F121C40D7E00DB48A2 /* ViewController.swift in Sources */,
 				7BBF999F21C42E3B00ECD6BF /* ArticleViewController.swift in Sources */,
+				7B8F49AD21C4441E00F52A70 /* NewsFeedParser.swift in Sources */,
 				7B93141121C4168E00DB48A2 /* NewsFeed.swift in Sources */,
 				7B9313EF21C40D7E00DB48A2 /* AppDelegate.swift in Sources */,
 			);
