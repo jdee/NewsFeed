@@ -13,8 +13,8 @@ import UIKit
 }
 
 struct Article {
-    var title: String!
-    var url: String!
+    var title: String?
+    var url: String?
 }
 
 enum NewsFeedStatus {
@@ -35,6 +35,7 @@ class NewsFeed: NSObject {
     func load() {
         guard status != .loading else { return } // let any load in progress complete. silently ignore this call.
         status = .loading
+        articles = []
 
         guard let url = URL(string: NewsFeed.url) else {
             notifyDelegate(error: "Malformed URL")

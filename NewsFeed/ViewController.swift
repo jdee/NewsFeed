@@ -39,11 +39,27 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         guard indexPath.row < newsFeed.articles.count else {
             return
         }
+
         guard let headlineCell = cell as? HeadlineTableViewCell else {
             return
         }
+
         headlineCell.headlineLabel.text = newsFeed.articles[indexPath.row].title
-        headlineCell.setNeedsLayout()
+    }
+
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        guard indexPath.row < newsFeed.articles.count else {
+            return tableView.rowHeight
+        }
+        guard let title = newsFeed.articles[indexPath.row].title else {
+            return tableView.rowHeight
+        }
+
+        let font = UIFont.systemFont(ofSize: 17)
+        let constrainedSize = CGSize(width: headlineTableView.bounds.width - 20, height: 200)
+        let attributed = NSAttributedString(string: title, attributes: [NSAttributedString.Key.font: font])
+        let size = attributed.boundingRect(with: constrainedSize, options: .usesLineFragmentOrigin, context: nil)
+        return size.height + 20
     }
 
     // MARK: - NewsFeedDelegate
