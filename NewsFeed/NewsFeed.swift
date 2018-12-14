@@ -17,7 +17,7 @@ struct Article {
     var author: String?
     var url: String?
     var sourceName: String?
-    var publicationTime: String?
+    var publicationTime: Date?
 }
 
 enum NewsFeedStatus {
@@ -94,7 +94,14 @@ class NewsFeed: NSObject {
             newsArticle.url = url
             newsArticle.sourceName = sourceName
             newsArticle.author = article["author"] as? String
-            newsArticle.publicationTime = article["publishedAt"] as? String
+
+            if let pubTime = article["publishedAt"] as? String {
+                let formatter = DateFormatter()
+                formatter.locale = Locale(identifier: "en_US_POSIX")
+                formatter.dateFormat = "yyyy-MM-dd'T'HH:mm:ssZZZZZ"
+                formatter.timeZone = TimeZone(secondsFromGMT: 0)
+                newsArticle.publicationTime = formatter.date(from: pubTime)
+            }
 
             articles.append(newsArticle)
         }

@@ -36,7 +36,12 @@ class ArticleViewController: UIViewController, WKNavigationDelegate {
         }
 
         if let date = article.publicationTime {
-            dateLabel.text = date
+            let formatter = DateFormatter()
+            formatter.locale = Locale(identifier: "en_US")
+            formatter.dateStyle = .medium
+            formatter.timeStyle = .medium
+
+            dateLabel.text = formatter.string(from: date)
             dateLabel.isHidden = false
         }
         else {
