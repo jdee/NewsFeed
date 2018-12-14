@@ -17,6 +17,7 @@ struct Article {
     var author: String?
     var url: String?
     var sourceName: String?
+    var publicationTime: String?
 }
 
 enum NewsFeedStatus {
@@ -90,9 +91,10 @@ class NewsFeed: NSObject {
 
             var newsArticle = Article()
             newsArticle.title = title
-            newsArticle.author = article["author"] as? String
             newsArticle.url = url
             newsArticle.sourceName = sourceName
+            newsArticle.author = article["author"] as? String
+            newsArticle.publicationTime = article["publishedAt"] as? String
 
             articles.append(newsArticle)
         }

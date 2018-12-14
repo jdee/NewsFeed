@@ -32,14 +32,6 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <wkWebView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="7gT-K4-Qpf">
-                                <rect key="frame" x="0.0" y="85" width="375" height="582"/>
-                                <color key="backgroundColor" red="0.36078431370000003" green="0.38823529410000002" blue="0.4039215686" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <wkWebViewConfiguration key="configuration">
-                                    <audiovisualMediaTypes key="mediaTypesRequiringUserActionForPlayback" none="YES"/>
-                                    <wkPreferences key="preferences"/>
-                                </wkWebViewConfiguration>
-                            </wkWebView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Title" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5I0-rC-Gxb">
                                 <rect key="frame" x="16" y="28" width="343" height="20.5"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
@@ -52,24 +44,42 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Date" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ci2-fe-aiT">
+                                <rect key="frame" x="16" y="85" width="343" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <wkWebView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="7gT-K4-Qpf">
+                                <rect key="frame" x="0.0" y="114" width="375" height="553"/>
+                                <color key="backgroundColor" red="0.36078431370000003" green="0.38823529410000002" blue="0.4039215686" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <wkWebViewConfiguration key="configuration">
+                                    <audiovisualMediaTypes key="mediaTypesRequiringUserActionForPlayback" none="YES"/>
+                                    <wkPreferences key="preferences"/>
+                                </wkWebViewConfiguration>
+                            </wkWebView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="RT0-i4-gjV" firstAttribute="trailing" secondItem="0j2-yn-Gp6" secondAttribute="trailing" constant="16" id="1cZ-Kv-9dX"/>
                             <constraint firstItem="5I0-rC-Gxb" firstAttribute="top" secondItem="RT0-i4-gjV" secondAttribute="top" constant="8" id="5aV-6T-Rya"/>
-                            <constraint firstItem="7gT-K4-Qpf" firstAttribute="top" secondItem="0j2-yn-Gp6" secondAttribute="bottom" constant="8" id="895-1a-4yt"/>
                             <constraint firstItem="0j2-yn-Gp6" firstAttribute="leading" secondItem="RT0-i4-gjV" secondAttribute="leading" constant="16" id="ADt-LX-5li"/>
                             <constraint firstItem="7gT-K4-Qpf" firstAttribute="trailing" secondItem="RT0-i4-gjV" secondAttribute="trailing" id="CCF-hW-JFQ"/>
                             <constraint firstItem="0j2-yn-Gp6" firstAttribute="top" secondItem="5I0-rC-Gxb" secondAttribute="bottom" constant="8" id="ENa-Te-QWd"/>
                             <constraint firstItem="RT0-i4-gjV" firstAttribute="trailing" secondItem="5I0-rC-Gxb" secondAttribute="trailing" constant="16" id="GSM-hU-gz6"/>
                             <constraint firstItem="7gT-K4-Qpf" firstAttribute="bottom" secondItem="RT0-i4-gjV" secondAttribute="bottom" id="Hz4-Jf-PmE"/>
                             <constraint firstItem="7gT-K4-Qpf" firstAttribute="leading" secondItem="RT0-i4-gjV" secondAttribute="leading" id="IT5-2H-EuQ"/>
+                            <constraint firstItem="7gT-K4-Qpf" firstAttribute="top" secondItem="Ci2-fe-aiT" secondAttribute="bottom" constant="8" id="bVG-9q-2gh"/>
                             <constraint firstItem="5I0-rC-Gxb" firstAttribute="leading" secondItem="RT0-i4-gjV" secondAttribute="leading" constant="16" id="gbX-gq-Gl9"/>
+                            <constraint firstItem="Ci2-fe-aiT" firstAttribute="top" secondItem="0j2-yn-Gp6" secondAttribute="bottom" constant="8" id="rbr-2Q-VkW"/>
+                            <constraint firstItem="Ci2-fe-aiT" firstAttribute="leading" secondItem="RT0-i4-gjV" secondAttribute="leading" constant="16" id="t9t-vw-3tN"/>
+                            <constraint firstItem="RT0-i4-gjV" firstAttribute="trailing" secondItem="Ci2-fe-aiT" secondAttribute="trailing" constant="16" id="umX-9m-ixW"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="RT0-i4-gjV"/>
                     </view>
                     <connections>
                         <outlet property="authorLabel" destination="0j2-yn-Gp6" id="aPR-HT-Z7h"/>
+                        <outlet property="dateLabel" destination="Ci2-fe-aiT" id="USm-7k-wsc"/>
                         <outlet property="titleLabel" destination="5I0-rC-Gxb" id="YaC-aG-ouc"/>
                         <outlet property="webView" destination="7gT-K4-Qpf" id="6Ma-l8-iM6"/>
                     </connections>

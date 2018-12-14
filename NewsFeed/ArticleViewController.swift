@@ -14,6 +14,7 @@ class ArticleViewController: UIViewController, WKNavigationDelegate {
 
     @IBOutlet var titleLabel: UILabel!
     @IBOutlet var authorLabel: UILabel!
+    @IBOutlet var dateLabel: UILabel!
     @IBOutlet var webView: WKWebView!
 
     var article: Article! {
@@ -32,6 +33,14 @@ class ArticleViewController: UIViewController, WKNavigationDelegate {
         }
         else {
             authorLabel.isHidden = true
+        }
+
+        if let date = article.publicationTime {
+            dateLabel.text = date
+            dateLabel.isHidden = false
+        }
+        else {
+            dateLabel.isHidden = true
         }
 
         view.setNeedsLayout()
