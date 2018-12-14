@@ -13,9 +13,10 @@ class ArticleViewController: UIViewController, WKNavigationDelegate {
     static let identifier = "Article"
 
     @IBOutlet var webView: WKWebView!
+
     var article: Article! {
         didSet {
-            title = article.title
+            title = article.sourceName
         }
     }
 
@@ -25,12 +26,8 @@ class ArticleViewController: UIViewController, WKNavigationDelegate {
         guard let url = URL(string: article.url ?? "") else { return }
         webView.load(URLRequest(url: url))
     }
-    
-    func webView(_ webView: WKWebView, didFinish navigation: WKNavigation!) {
-
-    }
 
     func webView(_ webView: WKWebView, didFail navigation: WKNavigation!, withError error: Error) {
-
+        print("Failed to load article \(article.url!): \(error.localizedDescription)")
     }
 }
