@@ -28,14 +28,14 @@ struct NewsFeedParser {
             throw ParseError.noArticlesField
         }
 
-        return process(response: articles)
+        return process(articleList: articles)
     }
 
     // Populate self.articles from result
-    private static func process(response: [Dictionary<String, Any>]) -> [Article] {
+    private static func process(articleList: [Dictionary<String, Any>]) -> [Article] {
         var articles = [Article]()
 
-        for var article in response {
+        for var article in articleList {
             guard let title = article["title"] as? String,
                 let url = article["url"] as? String,
                 let source = article["source"] as? Dictionary<String, Any>,

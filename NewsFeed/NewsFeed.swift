@@ -45,6 +45,11 @@ class NewsFeed: NSObject {
             return
         }
 
+        /*
+         * This is a simple way to load data from a URL in this case: Dispatch the synchronous
+         * Data(contentsOf: url) to a background thread and then dispatch the results back to
+         * the main thread.
+         */
         DispatchQueue.global().async {
             do {
                 let data = try Data(contentsOf: url)
@@ -57,6 +62,11 @@ class NewsFeed: NSObject {
                 self.notifyDelegate(error: nil)
             }
             catch {
+                /*
+                 * TODO: Improve handling of different error cases. The details are not
+                 * interesting to the user, but specific error messages can only be
+                 * reported here.
+                 */
                 self.notifyDelegate(error: "Failed to load \(url)")
             }
         }
