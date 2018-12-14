@@ -51,7 +51,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
 
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         /*
-         * This may or may not be necessary, but it was sufficient to fix a layout issue.s
+         * This may or may not be necessary, but it was sufficient to fix a layout issue.
          */
         guard indexPath.row < newsFeed.articles.count else {
             return tableView.rowHeight
@@ -68,7 +68,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     }
 
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        guard indexPath.row < newsFeed.articles.count else {
+        guard newsFeed.status == .loaded && indexPath.row < newsFeed.articles.count else {
             return
         }
 

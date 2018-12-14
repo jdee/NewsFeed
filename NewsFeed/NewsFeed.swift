@@ -48,7 +48,8 @@ class NewsFeed: NSObject {
         /*
          * This is a simple way to load data from a URL in this case: Dispatch the synchronous
          * Data(contentsOf: url) to a background thread and then dispatch the results back to
-         * the main thread.
+         * the main thread. In a real app, an NSURLSession or third-party library would probably
+         * be preferable.
          */
         DispatchQueue.global().async {
             do {
