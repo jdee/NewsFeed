@@ -35,6 +35,8 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         return tableView.dequeueReusableCell(withIdentifier: HeadlineTableViewCell.identifier) ?? HeadlineTableViewCell()
     }
 
+    // MARK: - UITableViewDelegate
+
     func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
         guard indexPath.row < newsFeed.articles.count else {
             return
@@ -56,10 +58,26 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         }
 
         let font = UIFont.systemFont(ofSize: 17)
-        let constrainedSize = CGSize(width: headlineTableView.bounds.width - 20, height: 200)
+        let constrainedSize = CGSize(width: headlineTableView.bounds.width - 40, height: 200)
         let attributed = NSAttributedString(string: title, attributes: [NSAttributedString.Key.font: font])
         let size = attributed.boundingRect(with: constrainedSize, options: .usesLineFragmentOrigin, context: nil)
         return size.height + 20
+    }
+
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        guard indexPath.row < newsFeed.articles.count else {
+            return
+        }
+
+        let article = newsFeed.articles[indexPath.row]
+        print("User selected article \(article.url ?? "")")
+
+        guard let viewController = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: ArticleViewController.identifier) as? ArticleViewController else {
+            return
+        }
+
+        viewController.article = article
+        navigationController?.pushViewController(viewController, animated: true)
     }
 
     // MARK: - NewsFeedDelegate
@@ -79,4 +97,3 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         newsFeed.load()
     }
 }
-

@@ -24,6 +24,40 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
         </scene>
+        <!--Article View Controller-->
+        <scene sceneID="ro2-ld-tiZ">
+            <objects>
+                <viewController storyboardIdentifier="Article" id="Ybb-AW-doq" customClass="ArticleViewController" customModule="NewsFeed" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="6FW-0a-3aR">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <wkWebView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="7gT-K4-Qpf">
+                                <rect key="frame" x="0.0" y="20" width="375" height="647"/>
+                                <color key="backgroundColor" red="0.36078431370000003" green="0.38823529410000002" blue="0.4039215686" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <wkWebViewConfiguration key="configuration">
+                                    <audiovisualMediaTypes key="mediaTypesRequiringUserActionForPlayback" none="YES"/>
+                                    <wkPreferences key="preferences"/>
+                                </wkWebViewConfiguration>
+                            </wkWebView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="7gT-K4-Qpf" firstAttribute="trailing" secondItem="RT0-i4-gjV" secondAttribute="trailing" id="CCF-hW-JFQ"/>
+                            <constraint firstItem="7gT-K4-Qpf" firstAttribute="bottom" secondItem="RT0-i4-gjV" secondAttribute="bottom" id="Hz4-Jf-PmE"/>
+                            <constraint firstItem="7gT-K4-Qpf" firstAttribute="leading" secondItem="RT0-i4-gjV" secondAttribute="leading" id="IT5-2H-EuQ"/>
+                            <constraint firstItem="7gT-K4-Qpf" firstAttribute="top" secondItem="RT0-i4-gjV" secondAttribute="top" id="xwr-m8-Emp"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="RT0-i4-gjV"/>
+                    </view>
+                    <connections>
+                        <outlet property="webView" destination="7gT-K4-Qpf" id="6Ma-l8-iM6"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="uIK-ul-HP9" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="685.60000000000002" y="719.19040479760122"/>
+        </scene>
         <!--News Feed-->
         <scene sceneID="i5i-BM-Bgu">
             <objects>
@@ -83,7 +117,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="f4V-nz-VCz" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1308" y="27"/>
+            <point key="canvasLocation" x="910" y="27"/>
         </scene>
     </scenes>
 </document>
