@@ -16,3 +16,4 @@ Notes
 - The headlines view should support refreshing to reload the latest headlines.
 - The headlines view should allow the user to load more stories via infinite scrolling or another mechanism.
 - The article view should display a loading spinner while the webview is loading.
+- General error handling should be improved.
