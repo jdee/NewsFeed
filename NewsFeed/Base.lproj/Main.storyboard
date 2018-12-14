@@ -88,10 +88,10 @@
             </objects>
             <point key="canvasLocation" x="669.60000000000002" y="832.53373313343332"/>
         </scene>
-        <!--News Feed-->
+        <!--Headlines-->
         <scene sceneID="i5i-BM-Bgu">
             <objects>
-                <viewController storyboardIdentifier="NewsFeed" title="News Feed" id="v9W-Hr-Nas" customClass="ViewController" customModule="NewsFeed" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="NewsFeed" title="Headlines" id="v9W-Hr-Nas" customClass="ViewController" customModule="NewsFeed" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="UV2-FT-VSt">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
