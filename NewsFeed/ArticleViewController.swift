@@ -26,7 +26,13 @@ class ArticleViewController: UIViewController, WKNavigationDelegate {
         super.viewDidLoad()
 
         titleLabel.text = article.title
-        authorLabel.text = article.author
+        if let author = article.author {
+            authorLabel.text = author
+            authorLabel.isHidden = false
+        }
+        else {
+            authorLabel.isHidden = true
+        }
 
         view.setNeedsLayout()
 

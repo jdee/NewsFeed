@@ -81,7 +81,6 @@ class NewsFeed: NSObject {
         for var article in response {
             guard let title = article["title"] as? String,
                 let url = article["url"] as? String,
-                let author = article["author"] as? String,
                 let source = article["source"] as? Dictionary<String, Any>,
                 let sourceName = source["name"] as? String else {
                 // Or could return this as an error to fail all processing
@@ -91,7 +90,7 @@ class NewsFeed: NSObject {
 
             var newsArticle = Article()
             newsArticle.title = title
-            newsArticle.author = author
+            newsArticle.author = article["author"] as? String
             newsArticle.url = url
             newsArticle.sourceName = sourceName
 
