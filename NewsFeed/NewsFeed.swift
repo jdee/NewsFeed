@@ -14,6 +14,7 @@ import UIKit
 
 struct Article {
     var title: String?
+    var author: String?
     var url: String?
     var sourceName: String?
 }
@@ -78,7 +79,9 @@ class NewsFeed: NSObject {
     // Populate self.articles from result
     private func process(response: [Dictionary<String, Any>]) -> String? {
         for var article in response {
-            guard let title = article["title"] as? String, let url = article["url"] as? String,
+            guard let title = article["title"] as? String,
+                let url = article["url"] as? String,
+                let author = article["author"] as? String,
                 let source = article["source"] as? Dictionary<String, Any>,
                 let sourceName = source["name"] as? String else {
                 // Or could return this as an error to fail all processing
@@ -88,6 +91,7 @@ class NewsFeed: NSObject {
 
             var newsArticle = Article()
             newsArticle.title = title
+            newsArticle.author = author
             newsArticle.url = url
             newsArticle.sourceName = sourceName
 

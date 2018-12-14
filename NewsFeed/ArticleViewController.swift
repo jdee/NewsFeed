@@ -12,6 +12,8 @@ import WebKit
 class ArticleViewController: UIViewController, WKNavigationDelegate {
     static let identifier = "Article"
 
+    @IBOutlet var titleLabel: UILabel!
+    @IBOutlet var authorLabel: UILabel!
     @IBOutlet var webView: WKWebView!
 
     var article: Article! {
@@ -22,6 +24,12 @@ class ArticleViewController: UIViewController, WKNavigationDelegate {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+
+        titleLabel.text = article.title
+        authorLabel.text = article.author
+
+        view.setNeedsLayout()
+
         webView.navigationDelegate = self
         guard let url = URL(string: article.url ?? "") else { return }
         webView.load(URLRequest(url: url))
